@@ -1,0 +1,47 @@
+/*SELECT
+    Date,
+    Region,
+    Small_Bags,
+    Large_Bags,
+    XLarge_Bags,
+    Total_Bags,
+    	Small_Bags + Large_Bags + XLarge_Bags AS Total_Bags_Calc
+       FROM `coastal-cider-465210-c8.avocado_data.avocado_prices` */
+       ---------
+ /*SELECT
+	Date,
+	Region,
+	Total_Bags,
+	Small_Bags,
+ (Small_Bags / Total_Bags)*100 AS Small_Bags_Percent
+ FROM `coastal-cider-465210-c8.avocado_data.avocado_prices`
+WHERE
+	Total_Bags !=0*/
+     
+
+     /*SELECT
+	 Date,
+	 Region,
+	 Total_Bags,
+	 Small_Bags,
+    Large_Bags,
+    XLarge_Bags,
+  (Small_Bags / Total_Bags)*100 AS Small_Bags_Percent,
+  (large_Bags / Total_Bags)*100 AS large_Bags_Percent,
+  (Xlarge_Bags / Total_Bags)*100 AS Xlarge_Bags_Percent
+ FROM `coastal-cider-465210-c8.avocado_data.avocado_prices`
+WHERE
+	Total_Bags !=0*/
+
+SELECT * FROM `coastal-cider-465210-c8.avocado_data.avocado_prices`
+
+
+
+
+SELECT
+EXTRACT(YEAR from starttime) AS Year,
+COUNT(*) AS num_of_rides
+
+ FROM `bigquery-public-data.new_york_citibike.citibike_trips` 
+ GROUP BY Year
+ ORDER BY Year
